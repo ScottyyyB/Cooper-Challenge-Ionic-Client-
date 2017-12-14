@@ -3,6 +3,7 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { Angular2TokenService } from 'angular2-token';
 import { HomePage } from '../pages/home/home';
 
 @Component({
@@ -24,7 +25,6 @@ export class MyApp {
     this._tokenService.init({
       apiBase: 'https://sb-cooper-api.herokuapp.com/api/v1'
     });
-
 
     this.initializeApp();
 
