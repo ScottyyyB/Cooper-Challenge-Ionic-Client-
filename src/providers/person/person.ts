@@ -2,12 +2,7 @@ import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 
 import { CooperProvider } from '../cooper/cooper';
-/*
-  Generated class for the PersonProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class PersonProvider {
   public gender: string;
