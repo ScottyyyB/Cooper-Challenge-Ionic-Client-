@@ -20,10 +20,10 @@ import { CooperProvider } from '../providers/cooper/cooper';
     HomePage,
   ],
   imports: [
-    BrowserModule,
-    HttpModule,
-    RouterModule,
     IonicModule.forRoot(MyApp),
+    RouterModule,
+    HttpModule,
+    BrowserModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
