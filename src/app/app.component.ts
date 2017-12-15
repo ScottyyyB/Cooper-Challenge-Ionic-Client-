@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Angular2TokenService } from 'angular2-token';
 import { HomePage } from '../pages/home/home';
 
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -76,12 +77,12 @@ export class MyApp {
   }
 
   updatePopUp() {
-    
+
   }
 
   loginPopUp() {
     console.log('popup');
-      let confirm = this.alertCtrl.create({
+    let confirm = this.alertCtrl.create({
       title: 'Login',
       inputs: [
         {
@@ -117,13 +118,13 @@ export class MyApp {
   }
 
   login(credentials) {
-    this._tokenService
-      .signIn(credentials)
-      .subscribe(
-        res => (this.currentUser = res.json().data),
-        error => console.log(error)
-      );
-  }
+   this._tokenService
+     .signIn(credentials)
+     .subscribe(
+     res => (this.currentUser = res.json().data),
+     err => console.error('error')
+     );
+ }
 
   logout() {
     this._tokenService
@@ -136,7 +137,7 @@ export class MyApp {
     this._tokenService
       .registerAccount(credentials)
       .subscribe(
-        res => console.log(res),
+        res => (this.currentUser = res.json().data),
         error => console.log(error)
       );
   }
@@ -156,6 +157,5 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
-
 
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
-
 import { CooperProvider } from '../cooper/cooper';
+
 
 @Injectable()
 export class PersonProvider {
