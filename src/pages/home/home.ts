@@ -30,14 +30,16 @@ export class HomePage {
 
     this.person.doAssessment(this.user.distance);
     console.log(this.person.assessmentMessage);
-
-    this.person.doAssessment(this.user.distance);
-    this.performanceData
-      .saveData({ performance_data: { data: { message: this.person.assessmentMessage } } })
-      .subscribe(data => console.log(data));
   }
 
   showResults() {
     this.modalCtrl.create(ResultsPage).present();
+  }
+
+  saveResults() {
+    this.person.doAssessment(this.user.distance);
+    this.performanceData
+      .saveData({ performance_data: { data: { message: this.person.assessmentMessage } } })
+      .subscribe(data => console.log(data));
   }
 }
