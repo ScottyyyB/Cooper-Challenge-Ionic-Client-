@@ -2,7 +2,7 @@ import { PersonProvider } from '../../providers/person/person';
 import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { PerformanceDataProvider } from '../../providers/performance-data/performance-data';
-
+import { ResultsPage } from '../results/results';
 
 @Component({
   selector: 'page-home',
