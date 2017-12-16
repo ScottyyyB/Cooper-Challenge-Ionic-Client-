@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { PerformanceDataProvider } from '../../providers/performance-data/performance-data';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the ResultsPage page.
@@ -15,6 +16,7 @@ import { PerformanceDataProvider } from '../../providers/performance-data/perfor
 })
 export class ResultsPage {
   results = [];
+  homePage = HomePage;
   constructor(
     private performanceData: PerformanceDataProvider,
     public navCtrl: NavController,

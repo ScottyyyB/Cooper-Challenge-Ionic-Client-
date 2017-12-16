@@ -77,12 +77,40 @@ export class MyApp {
   }
 
   updatePopUp() {
-
+    console.log('popup');
+    let alert = this.alertCtrl.create({
+      title: 'Update',
+      inputs: [
+        {
+          name: 'password' ,
+          placeholder: 'password'
+        },
+        {
+          name: 'password_confirmation',
+          placeholder: 'password confirmation'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Update',
+          handler: data => {
+            this.update(data);
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
   loginPopUp() {
     console.log('popup');
-    let confirm = this.alertCtrl.create({
+    let alert = this.alertCtrl.create({
       title: 'Login',
       inputs: [
         {
@@ -110,11 +138,16 @@ export class MyApp {
         }
       ]
     });
-    confirm.present();
+    alert.present();
   }
 
   update(credentials) {
-
+    this._tokenService
+      .updatePassword(credentials)
+      .subscribe(
+        res => (this.currentUser = res.json().data),
+        err => console.error('error')
+      )
   }
 
   login(credentials) {
