@@ -2,6 +2,7 @@ import { PersonProvider } from '../../providers/person/person';
 import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { PerformanceDataProvider } from '../../providers/performance-data/performance-data';
+import { FizzbuzzProvider } from '../../providers/fizzbuzz/fizzbuzz';
 import { ResultsPage } from '../results/results';
 
 @Component({
@@ -10,10 +11,12 @@ import { ResultsPage } from '../results/results';
 })
 export class HomePage {
   user: any = {};
+  fizzbuzz: boolean = false;
 
   constructor(
     public navCtrl: NavController,
     public person: PersonProvider,
+    public game: FizzbuzzProvider,
     private performanceData: PerformanceDataProvider,
     public modalCtrl: ModalController
   ) {
@@ -41,5 +44,20 @@ export class HomePage {
     this.performanceData
       .saveData({ performance_data: { data: { message: this.person.assessmentMessage } } })
       .subscribe(data => console.log(data));
+  }
+
+  toggleContent() {
+    if (!this.fizzbuzz) {
+      this.fizzbuzz = true;
+      return;
+    }
+    if (this.fizzbuzz) {
+      this.fizzbuzz = false;
+      return;
+    }
+  }
+
+  playGame() {
+    this.game.playFizz(this.game.input);
   }
 }

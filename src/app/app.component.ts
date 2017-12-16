@@ -151,12 +151,12 @@ export class MyApp {
   }
 
   login(credentials) {
-   this._tokenService
-     .signIn(credentials)
-     .subscribe(
-     res => (this.currentUser = res.json().data),
-     err => console.error('error')
-     );
+    this._tokenService
+      .signIn(credentials)
+      .subscribe(
+        res => (this.currentUser = res.json().data),
+        err => console.error('error')
+      );
  }
 
   logout() {

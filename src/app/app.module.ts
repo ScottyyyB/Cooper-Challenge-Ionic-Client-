@@ -15,13 +15,13 @@ import { PersonProvider } from '../providers/person/person';
 import { CooperProvider } from '../providers/cooper/cooper';
 import { PerformanceDataProvider } from '../providers/performance-data/performance-data';
 import { ResultsPage } from '../pages/results/results';
-
+import { FizzbuzzProvider } from '../providers/fizzbuzz/fizzbuzz';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ResultsPage
+    ResultsPage,
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -33,7 +33,7 @@ import { ResultsPage } from '../pages/results/results';
   entryComponents: [
     MyApp,
     HomePage,
-    ResultsPage
+    ResultsPage,
   ],
   providers: [
     StatusBar,
@@ -42,7 +42,8 @@ import { ResultsPage } from '../pages/results/results';
     PersonProvider,
     CooperProvider,
     Angular2TokenService,
-    PerformanceDataProvider
+    PerformanceDataProvider,
+    FizzbuzzProvider
   ]
 })
 export class AppModule {}
